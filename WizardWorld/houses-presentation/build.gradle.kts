@@ -49,9 +49,14 @@ dependencies {
     implementation(libs.compose.material.icons.extended)
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
+    implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.navigation.compose) // For navigation
     implementation(libs.androidx.hilt.navigation.compose) // For hiltViewModel()
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler) // For Hilt in ViewModels
+
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
 }

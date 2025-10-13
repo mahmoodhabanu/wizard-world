@@ -35,7 +35,6 @@ class HouseListViewModel @Inject constructor(
                 is Result.Error -> {
                     _uiState.value = UIState.Error(result.error)
                 }
-                Result.Loading -> UIState.Loading
             }
         }
     }

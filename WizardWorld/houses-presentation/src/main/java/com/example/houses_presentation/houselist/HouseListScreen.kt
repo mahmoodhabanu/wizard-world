@@ -139,9 +139,3 @@ fun HouseListItem(house: House, onClick: () -> Unit) {
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewHouseListScreen() {
-    HouseListScreen(onHouseClick = {})
-}

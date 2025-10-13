@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/20c128a1-bbac-481c-bfb3-0add3a510070
+
 # wizard-world
 
 This project showcases a clean architecture implementation for fetching a list of "Houses" (e.g., from the Wizarding World) using Kotlin, Coroutines, and a custom `Result` sealed class for explicit state management and robust error handling.
@@ -23,7 +27,9 @@ The project adheres to a clean architecture pattern, organizing code into distin
 *   **Presentation Layer(houses-presentation)** : This layer (e.g., an Android `ViewModel` and UI components(Compose is used here) would consume the `GetHousesUseCase` and react to the `Result` states (Success, Error) to update the user interface accordingly.
 
 ## Potential Improvements
-* Centralized Network Availability Check and Offline Support and Caching
+* Centralized Network Availability Check and Offline Support and Caching<img width="1084" height="2412" alt="HousesListScreen" src="https://github.com/user-attachments/assets/0e91c965-7fdf-41ab-86e6-a9ac2746a9c9" />
+<img width="1084" height="2412" alt="HousesDetailScreen" src="https://github.com/user-attachments/assets/6c9dea41-13b7-4e92-8267-fdcf1617df85" />
+
 * Pagination for Large Dataset
 
 

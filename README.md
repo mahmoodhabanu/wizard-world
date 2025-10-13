@@ -27,12 +27,14 @@ The project adheres to a clean architecture pattern, organizing code into distin
 *   **Presentation Layer(houses-presentation)** : This layer (e.g., an Android `ViewModel` and UI components(Compose is used here) would consume the `GetHousesUseCase` and react to the `Result` states (Success, Error) to update the user interface accordingly.
 
 ## Potential Improvements
-* Centralized Network Availability Check and Offline Support and Caching<img width="1084" height="2412" alt="HousesListScreen" src="https://github.com/user-attachments/assets/0e91c965-7fdf-41ab-86e6-a9ac2746a9c9" />
-<img width="1084" height="2412" alt="HousesDetailScreen" src="https://github.com/user-attachments/assets/6c9dea41-13b7-4e92-8267-fdcf1617df85" />
-
+* Centralized Network Availability Check and Offline Support and Caching
 * Pagination for Large Dataset
 
 
 ## Setup
 AGP version: 8.7.2
 Android Studio Version : Android Studio Ladybug | 2024.2.1 Patch 2
+
+<img width="1084" height="2412" alt="HousesListScreen" src="https://github.com/user-attachments/assets/06b1757c-0903-43f9-a8e7-ee413bc55435" />
+<img width="1084" height="2412" alt="HousesDetailScreen" src="https://github.com/user-attachments/assets/8a7e2554-d94a-4bb3-9633-7f9db46abcdf" />
+

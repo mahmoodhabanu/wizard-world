@@ -35,6 +35,7 @@ The project adheres to a clean architecture pattern, organizing code into distin
 AGP version: 8.7.2
 Android Studio Version : Android Studio Ladybug | 2024.2.1 Patch 2
 
+## Screenshots
 <img width="1084" height="2412" alt="HousesListScreen" src="https://github.com/user-attachments/assets/06b1757c-0903-43f9-a8e7-ee413bc55435" />
 <img width="1084" height="2412" alt="HousesDetailScreen" src="https://github.com/user-attachments/assets/8a7e2554-d94a-4bb3-9633-7f9db46abcdf" />
 

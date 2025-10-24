@@ -21,13 +21,14 @@ import com.example.houses_domain.model.Trait
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.advanceUntilIdle
 
 @OptIn(ExperimentalCoroutinesApi::class) // Opt-in for Experimental Coroutines API
 class HouseListViewModelTest {
 
     // Use UnconfinedTestDispatcher for immediate execution of coroutines
-    private val testDispatcher = UnconfinedTestDispatcher()
+    private val testDispatcher = StandardTestDispatcher()
     private lateinit var getHousesUseCase: GetHousesUseCase
     private lateinit var viewModel: HouseListViewModel // Declared here, initialized in tests
     private val sampleHouse = House(
@@ -51,7 +52,7 @@ class HouseListViewModelTest {
     @Before
     fun setup() {
         // Set the Main dispatcher to our test dispatcher so viewModelScope uses it
-        Dispatchers.setMain(testDispatcher)
+        //Dispatchers.setMain(testDispatcher)
         // Initialize the mock use case before each test
         getHousesUseCase = mockk()
     }
@@ -63,7 +64,7 @@ class HouseListViewModelTest {
     }
 
     @Test
-    fun `fetchHouses_success_emitsIdleLoadingThenSuccess`() = runTest(testDispatcher) {
+    fun `fetchHouses_success_emitsIdleLoadingThenSuccess`() = runTest() {
         // Given: Dummy data and mock the use case to return success
         val dummyHouses = listOf(
             sampleHouse

@@ -30,12 +30,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.example.core_common.UIState
 import com.example.core_common.toMessage
 import com.example.houses_domain.model.House
+import com.example.houses_presentation.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -49,7 +50,7 @@ fun HouseListScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Wizarding Houses") },
+                title = { Text(stringResource(R.string.wizarding_houses_title)) },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     titleContentColor = MaterialTheme.colorScheme.onPrimary

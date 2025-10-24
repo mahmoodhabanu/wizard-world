@@ -15,6 +15,9 @@ import org.junit.Before
 import org.junit.Test
 import com.example.core_common.Result
 import junit.framework.TestCase.assertEquals
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.setMain
 import java.io.IOException
 
 @ExperimentalCoroutinesApi
@@ -22,15 +25,17 @@ class HouseRepositoryImplTest {
 
     private lateinit var remote: HouseRemoteDataSource
     private lateinit var repository: HouseRepositoryImpl
+    private val testDispatcher = StandardTestDispatcher()
 
     @Before
     fun setup() {
+        Dispatchers.setMain(testDispatcher)
         remote = mockk() // Initialize the mock for HouseRemoteDataSource
-        repository = HouseRepositoryImpl(remote) // Inject the mocked remote data source
+        repository = HouseRepositoryImpl(remote, testDispatcher) // Inject the mocked remote data source
     }
 
     @Test
-    fun getHouses_returnsSuccessResultWithHouses_whenRemoteSucceeds() = runTest {
+    fun getHouses_returnsSuccessResultWithHouses_whenRemoteSucceeds() = runTest(testDispatcher) {
         val sampleHouse = House(
             id = "1",
             houseColours = "Scarlet and Gold",
@@ -106,4 +111,12 @@ class HouseRepositoryImplTest {
         val unexpectedError = errorResult.error as AppError.Unexpected
         assertEquals(genericException, unexpectedError.throwable) // Verify the original throwable is wrapped
     }
+
+//    // Helper function to encapsulate the runTest logic
+//    private fun runRepositoryTest(testBody: suspend TestScope.(HouseRepositoryImpl) -> Unit) = runTest {
+//        // Create the dispatcher *here*, using the testScheduler provided by runTest
+//        val dispatcherForRepository = StandardTestDispatcher(testScheduler)
+//        val repository = HouseRepositoryImpl(remote, dispatcherForRepository)
+//        testBody(repository) // Pass the repository to the test body
+//    }
 }
